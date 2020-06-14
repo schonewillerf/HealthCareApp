@@ -12,7 +12,7 @@ public class TestProfile
         Profile profile = new Profile();
         profile.setVoorNaam("Raymond");
 
-        assertEquals("Raymond", profile.getVoorNaam());
+        assertEquals("Bert", profile.getVoorNaam());
     }
 
     @Test
