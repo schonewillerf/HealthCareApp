@@ -14,6 +14,7 @@ public class DatabaseHandler
 
     public boolean checkLogin(String gebruiker, String wachtwoord)
     {
+
         SQLiteDataSource dataSource = new SQLiteDataSource();
         dataSource.setUrl("jdbc:sqlite:ZorgDB.SQLITE");
 

@@ -1,4 +1,4 @@
-package adsd.app.zorgapp;
+package adsd.app.zorgapp.models;
 
 import javafx.application.Platform;
 import javafx.scene.control.Alert;

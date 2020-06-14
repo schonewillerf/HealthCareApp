@@ -1,5 +1,6 @@
 package adsd.app.zorgapp;
 
+import adsd.app.zorgapp.models.MedicatieAlarm;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
