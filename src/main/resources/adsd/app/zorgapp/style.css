@@ -1,0 +1,8 @@
+/* opmaak voor read only text velden zodat ze beter leesbaar zijn */
+
+TextField:readonly { -fx-background-color: #fff; }
+
+/* kleuren schema voor grafiek */
+.default-color0.chart-area-symbol { -fx-background-color: #dda0dd, #d8bfd855; }
+.default-color0.chart-series-area-line { -fx-stroke: #dda0dd; }
+.default-color0.chart-series-area-fill { -fx-fill: #d8bfd855; }

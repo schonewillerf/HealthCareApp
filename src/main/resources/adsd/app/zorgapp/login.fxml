@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adsd.app.zorgapp.controllers.LoginController">
+   <children>
+      <Label alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="290.0" text="%login.gebruiker.label">
+         <VBox.margin>
+            <Insets bottom="10.0" left="50.0" top="100.0" />
+         </VBox.margin></Label>
+      <TextField fx:id="gebruikerText" promptText="%login.gebruiker.prompt">
+         <VBox.margin>
+            <Insets bottom="30.0" left="50.0" right="50.0" />
+         </VBox.margin></TextField>
+      <Label alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="45.0" prefWidth="290.0" text="%login.wachtwoord.label">
+         <VBox.margin>
+            <Insets bottom="10.0" left="50.0" right="50.0" />
+         </VBox.margin></Label>
+      <TextField fx:id="wachtwoordText" layoutX="10.0" layoutY="55.0" promptText="%login.wachtwoord.prompt">
+         <VBox.margin>
+            <Insets bottom="30.0" left="50.0" right="50.0" />
+         </VBox.margin></TextField>
+      <Label fx:id="foutmeldingLabel" prefHeight="67.0" prefWidth="834.0">
+         <VBox.margin>
+            <Insets bottom="10.0" left="50.0" right="50.0" />
+         </VBox.margin></Label>
+      <HBox prefHeight="39.0" prefWidth="900.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#selectNL" text="NL">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#selectEN" text="EN">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button layoutX="70.0" layoutY="10.0" mnemonicParsing="false" onAction="#selectDE" text="DE">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="360.0" right="360.0" />
+         </padding>
+      </HBox>
+      <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="39.0" prefWidth="900.0">
+         <children>
+            <Button alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#loginButtonClick" text="%login.login" />
+         </children>
+         <VBox.margin>
+            <Insets right="50.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

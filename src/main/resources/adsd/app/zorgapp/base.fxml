@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adsd.app.zorgapp.controllers.BaseController">
+   <children>
+      <AnchorPane layoutX="64.0" layoutY="-131.0" prefHeight="620.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox layoutX="181.0" layoutY="120.0" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="900.0">
+                     <children>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#logoutButtonClick" text="%afmelden" />
+                     </children>
+                  </HBox>
+                  <Label id="titleLabel" fx:id="titleLabel" alignment="TOP_CENTER" prefHeight="58.0" prefWidth="900.0" text="Voornaam Achternaam">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <TabPane prefHeight="500.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                       <Tab text="%p.profile">
+                          <content>
+                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox layoutX="143.0" layoutY="60.0" prefHeight="467.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="69.0" prefWidth="600.0">
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="160.0" text="%p.voornaam">
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField id="voorNaamField" fx:id="voorNaamField" editable="false" prefHeight="28.0" prefWidth="350.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="69.0" prefWidth="600.0">
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="160.0" text="%p.achternaam">
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField id="achterNaamField" fx:id="achterNaamField" editable="false" prefHeight="28.0" prefWidth="350.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="69.0" prefWidth="600.0">
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="160.0" text="%p.leeftijd">
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField id="leeftijdField" fx:id="leeftijdField" editable="false" prefHeight="28.0" prefWidth="350.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="148.0" prefHeight="69.0" prefWidth="600.0">
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="160.0" text="%p.lengte">
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField id="lengteField" fx:id="lengteField" editable="false" prefHeight="28.0" prefWidth="350.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="217.0" prefHeight="69.0" prefWidth="600.0">
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="160.0" text="%p.gewicht.lab">
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField id="gewichtField" fx:id="gewichtField" editable="false" prefHeight="28.0" prefWidth="350.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="286.0" prefHeight="69.0" prefWidth="600.0">
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="160.0" text="%p.bmi">
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField id="BMIField" fx:id="BMIField" editable="false" prefHeight="28.0" prefWidth="350.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="355.0" prefHeight="69.0" prefWidth="600.0">
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="160.0">
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Button id="bewerkenButton" fx:id="bewerkenButton" defaultButton="true" mnemonicParsing="false" onAction="#profEditButtonClick" prefHeight="28.0" prefWidth="350.0" text="%profile.bewerkenButtonBewerken" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
+                          </content>
+                       </Tab>
+                       <Tab text="%p.medicijnen">
+                          <content>
+                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="medicijnTabel" prefHeight="437.0" prefWidth="1070.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                      <columns>
+                                        <TableColumn fx:id="medicijnNaam" prefWidth="187.0" text="%tab.med.naam" />
+                                          <TableColumn fx:id="medicijnOmschrijving" prefWidth="283.0" text="%tab.med.omschrijving" />
+                                          <TableColumn fx:id="medicijnSoort" prefWidth="194.0" text="%tab.med.soort" />
+                                          <TableColumn fx:id="medicijnDosering" prefWidth="201.0" text="%tab.med.dosering" />
+                                      </columns>
+                                    </TableView>
+                                 </children></AnchorPane>
+                          </content>
+                       </Tab>
+                      <Tab text="%p.gewicht">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox layoutX="14.0" layoutY="19.0" prefHeight="411.0" prefWidth="219.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                       <children>
+                                          <Label prefHeight="28.0" prefWidth="258.0" text="%meetmoment" />
+                                          <DatePicker fx:id="meetpuntDatePicker" prefHeight="28.0" prefWidth="275.0">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin></DatePicker>
+                                          <TextField fx:id="meetpuntGewichtField" prefHeight="28.0" prefWidth="193.0">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin></TextField>
+                                          <Button fx:id="meetpuntAddButton" defaultButton="true" mnemonicParsing="false" onAction="#mpAddButtonClick" prefHeight="28.0" prefWidth="221.0" text="%toevoegen">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin></Button>
+                                          <Button fx:id="meetpuntEditButton" disable="true" layoutX="10.0" layoutY="94.0" mnemonicParsing="false" onAction="#mpEditButtonClick" prefHeight="28.0" prefWidth="222.0" text="%aanpassen">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin></Button>
+                                          <Button fx:id="meetpuntDeleteButton" disable="true" layoutX="10.0" layoutY="122.0" mnemonicParsing="false" onAction="#mpDeleteButtonClick" prefHeight="28.0" prefWidth="221.0" text="%verwijderen">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin></Button>
+                                          <Button fx:id="meetpuntCancelButton" cancelButton="true" disable="true" layoutX="10.0" layoutY="150.0" mnemonicParsing="false" onAction="#mpCancelButtonClick" prefHeight="28.0" prefWidth="220.0" text="%annuleren">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin></Button>
+                                       </children>
+                                    </VBox>
+                                    <TabPane layoutX="249.0" layoutY="49.0" prefHeight="437.0" prefWidth="636.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="249.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                      <tabs>
+                                        <Tab text="%tabel">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="gewichtTabel" layoutX="14.0" layoutY="15.0" prefHeight="374.0" prefWidth="578.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="gewichtId" prefWidth="60.0" text="ID" />
+                                                            <TableColumn fx:id="gewichtDatum" prefWidth="239.0" text="%datum" />
+                                                            <TableColumn fx:id="gewichtGewicht" prefWidth="256.0" text="%gewicht" />
+                                                        </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab text="%grafiek">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <AreaChart fx:id="gewichtGrafiek" layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                                        <xAxis>
+                                                          <CategoryAxis fx:id="tijdAs" side="BOTTOM" />
+                                                        </xAxis>
+                                                        <yAxis>
+                                                          <NumberAxis fx:id="gewichtAs" side="LEFT" />
+                                                        </yAxis>
+                                                      </AreaChart>
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
