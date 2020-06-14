@@ -1,0 +1,9 @@
+# Gitlab CI bestand
+
+# Het Docker Image waarmee het script wordt uitgevoerd
+image: openjdk:11-jdk
+
+# Een eenvoudig script dat unittests uitvoert
+test:
+  script: ./mvnw test
+ 
