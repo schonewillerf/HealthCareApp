@@ -58,6 +58,8 @@ public class DatabaseHandler
                      "INNER JOIN gebruikers ON profielen.gebruiker = gebruikers.id " +
                      "WHERE gebruikers.id = ?";
 
+        Profile profile = new Profile();
+
         try (
                 Connection connection = dataSource.getConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(SQL)
@@ -71,7 +73,7 @@ public class DatabaseHandler
             {
                 if (resultSet.next())
                 {
-                    Profile profile = new Profile(
+                    profile = new Profile(
                             resultSet.getInt("id"),
                             resultSet.getString("voorNaam"),
                             resultSet.getString("achterNaam"),
@@ -79,8 +81,6 @@ public class DatabaseHandler
                             resultSet.getDouble("gewicht"),
                             resultSet.getDouble("lengte")
                     );
-
-                    return profile;
                 }
             }
         }
@@ -89,7 +89,7 @@ public class DatabaseHandler
             e.printStackTrace();
         }
 
-    return null;
+    return profile;
     }
 
     public ArrayList<Medicijn> getMedicijnen(String taal)
@@ -102,6 +102,8 @@ public class DatabaseHandler
                      "INNER JOIN profielen ON medicijnen.patient = profielen.id " +
                      "WHERE medicijntekst.taal = ? AND profielen.id = ?";
 
+        ArrayList<Medicijn> medicijnen = new ArrayList<>();
+
         Profile currentProfile = getProfile();
 
         try (
@@ -111,8 +113,6 @@ public class DatabaseHandler
         {
             preparedStatement.setString(1, taal);
             preparedStatement.setInt(2, currentProfile.getPatientId());
-
-            ArrayList<Medicijn> medicijnen = new ArrayList<>();
 
             try (
                     ResultSet resultSet = preparedStatement.executeQuery()
@@ -129,8 +129,6 @@ public class DatabaseHandler
                     Medicijn medicijn = new Medicijn(id, naam, omschrijving, soort, dosering);
                     medicijnen.add(medicijn);
                 }
-
-                return medicijnen;
             }
         }
         catch (SQLException e)
@@ -138,7 +136,7 @@ public class DatabaseHandler
             e.printStackTrace();
         }
 
-        return null;
+        return medicijnen;
     }
 
     public ArrayList<Meetmoment> getMeetmomenten()
@@ -152,6 +150,8 @@ public class DatabaseHandler
                      "INNER JOIN gebruikers ON profielen.gebruiker = gebruikers.id " +
                      "WHERE gebruikers.id = ?";
 
+        ArrayList<Meetmoment> meetmomenten = new ArrayList<>();
+
         try (
                 Connection connection = dataSource.getConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(SQL)
@@ -163,8 +163,6 @@ public class DatabaseHandler
                     ResultSet resultSet = preparedStatement.executeQuery()
             )
             {
-                ArrayList<Meetmoment> meetmomenten = new ArrayList<Meetmoment>();
-
                 while (resultSet.next())
                 {
                     meetmomenten.add(new Meetmoment(
@@ -172,8 +170,6 @@ public class DatabaseHandler
                             resultSet.getString("datum"),
                             resultSet.getDouble("gewicht")));
                 }
-
-                return meetmomenten;
             }
         }
         catch (SQLException e)
@@ -181,7 +177,7 @@ public class DatabaseHandler
             e.printStackTrace();
         }
 
-        return null;
+        return meetmomenten;
     }
 
     public int addMeetmoment(String datum, double gewicht) throws SQLException
